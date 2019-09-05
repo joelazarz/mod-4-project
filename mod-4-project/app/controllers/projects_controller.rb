@@ -6,5 +6,19 @@ class ProjectsController < ApplicationController
         render json: projects
     end
 
+    def new
+        project = Project.new 
+    end
+
+    def create
+        project = Project.create(project_params)
+    end
+
+    private
+
+    def task_params
+        params.require(:project).permit(:name, :description, :repo_link, :languages, :user_id)
+    end
+
 
 end
