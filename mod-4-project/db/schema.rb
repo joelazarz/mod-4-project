@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 2019_09_05_184806) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string "name"
     t.text "description"
-    t.string "status"
+    t.string "category"
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
