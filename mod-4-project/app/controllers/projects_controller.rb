@@ -18,11 +18,12 @@ class ProjectsController < ApplicationController
 
     def create
         project = Project.create(project_params)
+        render json: project
     end
 
     private
 
-    def task_params
+    def project_params
         params.require(:project).permit(:name, :description, :repo_link, :languages, :user_id)
     end
 
