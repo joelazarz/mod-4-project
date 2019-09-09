@@ -21,6 +21,14 @@ class ProjectsController < ApplicationController
         render json: project
     end
 
+    def edit 
+        project = Project.find(params[:id])
+    end
+
+    def update
+        project = Project.update(project_params)
+    end
+
     private
 
     def project_params

@@ -10,14 +10,26 @@ class TasksController < ApplicationController
         task = Task.new 
     end
 
+    def show 
+        task = Task.find(params[:id])
+
+        render json: task
+    end
+
+
     def create
         task = Task.create(task_params)
+    end
+
+    def update
+        task = Task.find(params[:id])
+        task.update(task_params)
     end
 
     private
 
     def task_params
-        params.require(:task).permit(:description, :status, :project_id)
+        params.require(:task).permit(:id, :name, :description, :category, :project_id)
     end
 
 
