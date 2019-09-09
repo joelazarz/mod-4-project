@@ -20,9 +20,17 @@ class ProjectsController < ApplicationController
         project = Project.create(project_params)
     end
 
+    def edit 
+        project = Project.find(params[:id])
+    end
+
+    def update
+        project = Project.update(project_params)
+    end
+
     private
 
-    def task_params
+    def project_params
         params.require(:project).permit(:name, :description, :repo_link, :languages, :user_id)
     end
 
