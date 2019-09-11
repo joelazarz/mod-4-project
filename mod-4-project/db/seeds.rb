@@ -1,20 +1,128 @@
-user1 = User.create(name: "John Smith" , email: "john.smith@gmail.com", password_digest: "12345", github_link: "https://github.com/", skills:"Javascript, Ruby")
-user2 = User.create(name: "Joe Lazarz", email:"jlazarz@gmail.com", password_digest:"12345", github_link:"https://github.com/", skills:"Javascript, React")
-user3 = User.create(name: "Adrienne Miranda", email:"adrienne@gmail.com", password_digest:"12345", github_link:"https://github.com/", skills:"Claw machine games, Javascript")
+require 'faker'
 
-project1 = Project.create(name:"Javascript Project", description:"project description", repo_link:"https://github.com/", languages:"Javascript", user_id:2)
-project2 = Project.create(name:"React Project", description:"project description", repo_link:"https://github.com/", languages:"React", user_id:3)
 
-user_project1 = UserProject.create(user_id:1, project_id:1)
-user_project2 = UserProject.create(user_id:2, project_id:1)
-user_project3 = UserProject.create(user_id:3, project_id:2)
+20.times do
+    User.create(
+        name: Faker::Name.unique.name, 
+        email: Faker::Internet.email, 
+        password: 'password', 
+        github_link: Faker::Internet.url, 
+        skills: Faker::ProgrammingLanguage.name
+    )
+end
 
-task1 = Task.create(name: "Set up CSS Library", description:"task description", category:"todo", project_id:1)
-task2 = Task.create(name: "Add Event Listeners", description:"task description", category:"wip", project_id:2)
-task3 = Task.create(name: "JS files", description:"task description", category:"wip", project_id:1)
-task4 = Task.create(name: "Rails Backend", description:"task description", category:"complete", project_id:2)
+20.times do
+    User.create(
+        name: Faker::Name.unique.name, 
+        email: Faker::Internet.email, 
+        password: 'password', 
+        github_link: Faker::Internet.url, 
+        skills: 'Javascript'
+    )
+end
 
-user_task1 = UserTask.create(user_id:1,task_id:1)
-user_task2 = UserTask.create(user_id:2,task_id:2)
-user_task3 = UserTask.create(user_id:1,task_id:3)
-user_task4 = UserTask.create(user_id:3,task_id:4)
+5.times do
+    User.create(
+        name: Faker::Name.unique.name, 
+        email: Faker::Internet.email, 
+        password: 'password', 
+        github_link: Faker::Internet.url, 
+        skills: 'Ruby'
+    )
+end
+
+5.times do
+    User.create(
+        name: Faker::TvShows::SiliconValley.character, 
+        email: Faker::Internet.email, 
+        password: 'password', 
+        github_link: Faker::Internet.url, 
+        skills: Faker::ProgrammingLanguage.name
+    )
+end
+
+
+
+20.times do
+    Project.create(
+        name: Faker::App.name,
+        description: Faker::Hacker.adjective, 
+        repo_link: Faker::Internet.url, 
+        languages: Faker::ProgrammingLanguage.name, 
+        user_id: rand(1..45)
+    )
+end
+
+10.times do
+    Project.create(
+        name: Faker::App.name,
+        description: Faker::Hacker.adjective, 
+        repo_link: Faker::Internet.url, 
+        languages: 'Javascript', 
+        user_id: rand(1..45)
+    )
+end
+
+10.times do
+    Project.create(
+        name: Faker::App.name,
+        description: Faker::Hacker.adjective, 
+        repo_link: Faker::Internet.url, 
+        languages: 'HTML/CSS', 
+        user_id: rand(1..45)
+    )
+end
+
+20.times do
+    Project.create(
+        name: Faker::App.name,
+        description: Faker::Hacker.adjective, 
+        repo_link: Faker::Internet.url, 
+        languages: 'React', 
+        user_id: rand(1..45)
+    )
+end
+
+
+
+
+
+
+60.times do
+    UserProject.create(
+        user_id: rand(1..45), 
+        project_id: rand(1..60)
+    )
+end
+
+
+
+
+70.times do
+    Task.create(
+        name: Faker::Hacker.verb,
+        description: Faker::Company.bs, 
+        category: 'todo', 
+        project_id: rand(1..60)
+    )
+end
+
+70.times do
+    Task.create(
+        name: Faker::Hacker.noun, 
+        description: Faker::Company.bs, 
+        category: 'todo', 
+        project_id: rand(1..60)
+    )
+end
+
+70.times do
+    Task.create(
+        name: Faker::File.mime_type, 
+        description: Faker::Markdown.random, 
+        category: 'todo', 
+        project_id: rand(1..60)
+    )
+end
+
+
