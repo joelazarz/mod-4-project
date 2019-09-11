@@ -15,6 +15,11 @@ class UserProjectsController < ApplicationController
     render json: user_project
   end
 
+  def destroy
+    user_project = UserProject.find(params[:id])
+    user_project.destroy
+  end
+
   private
 
   def user_project_params

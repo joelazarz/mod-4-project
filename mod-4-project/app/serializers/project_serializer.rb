@@ -2,6 +2,7 @@ class ProjectSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :repo_link, :languages, :user_id
   has_many :tasks
   has_many :users
+  has_many :user_projects
   belongs_to :user
   def tasks
     self.object.tasks.map do |task|
