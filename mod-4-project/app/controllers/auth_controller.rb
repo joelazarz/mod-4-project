@@ -11,7 +11,7 @@ class AuthController < ApplicationController
 
     def autologin
         token = request.headers['Authorization']
-        user_id = JWT.decode(token, 'secret')[0]["userId"]
+        user_id = JWT.decode(token, 'secret')["userId"]
         user = User.find(user_id)
 
         render json: user
