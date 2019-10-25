@@ -22,7 +22,7 @@ Built with Rails 5 using Postgres.
 
 ## Authors
 
-Adrienne Miranda
+Adrienne Miranda  
 Joe Lazarz
 
 
