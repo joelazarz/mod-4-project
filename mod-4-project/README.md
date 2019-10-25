@@ -1,24 +1,28 @@
-# README
+Github Collaborator Organizer
+========================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A project organization site for Github users to create new projects with tasks, browse other projects,and collaborate on them.
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+Run `rails db:create` in the project directory.
+Then run `rails db:migrate`.
 
-* System dependencies
+Install the frontend of the project following the instructions in that README: [Github Collaborator Organizer Frontend](https://github.com/joelazarz/react-mod-4-project)
 
-* Configuration
+## Running the App
 
-* Database creation
+Run `rails s` to start the server.
 
-* Database initialization
+Then get the frontend running by following the instructions in the link above. 
 
-* How to run the test suite
+## Tech/Framework Used
 
-* Services (job queues, cache servers, search engines, etc.)
+Built with Rails 5 using Postgres.
 
-* Deployment instructions
+## Authors
 
-* ...
+Adrienne Miranda
+Joe Lazarz
+
+
