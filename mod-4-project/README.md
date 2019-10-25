@@ -5,7 +5,8 @@ A project organization site for Github users to create new projects with tasks, 
 
 ## Install
 
-Run `rails db:create` in the project directory.
+Run `bundle install` in the project directory.
+Then run `rails db:create`.
 Then run `rails db:migrate`.
 
 Install the frontend of the project following the instructions in that README: [Github Collaborator Organizer Frontend](https://github.com/joelazarz/react-mod-4-project)
